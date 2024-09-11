@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.Cells" Version="24.9.0" />
+    <PackageReference Include="Binance.Net" Version="10.3.0" />
+    <PackageReference Include="ScottPlot" Version="5.0.39" />
     <PackageReference Include="ScottPlot.WinForms" Version="5.0.37" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

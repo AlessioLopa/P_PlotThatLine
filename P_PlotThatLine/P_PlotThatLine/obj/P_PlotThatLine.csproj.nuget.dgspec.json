@@ -51,9 +51,25 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Aspose.Cells": {
+              "target": "Package",
+              "version": "[24.9.0, )"
+            },
+            "Binance.Net": {
+              "target": "Package",
+              "version": "[10.3.0, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.39, )"
+            },
             "ScottPlot.WinForms": {
               "target": "Package",
               "version": "[5.0.37, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
