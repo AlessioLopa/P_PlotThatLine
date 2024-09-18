@@ -55,9 +55,17 @@
               "target": "Package",
               "version": "[24.9.0, )"
             },
+            "Binance.API.Csharp.Client": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
             "Binance.Net": {
               "target": "Package",
-              "version": "[10.3.0, )"
+              "version": "[10.4.0, )"
+            },
+            "Binance.Spot": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             },
             "ScottPlot": {
               "target": "Package",
@@ -65,7 +73,7 @@
             },
             "ScottPlot.WinForms": {
               "target": "Package",
-              "version": "[5.0.37, )"
+              "version": "[5.0.39, )"
             },
             "System.Linq": {
               "target": "Package",

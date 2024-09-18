@@ -20,7 +20,24 @@
           }
         }
       },
-      "Binance.Net/10.3.0": {
+      "Binance.API.Csharp.Client/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
+          "WebSocketSharp-NonPreRelease": "1.0.0"
+        },
+        "compile": {
+          "lib/net46/Binance.API.Csharp.Client.Domain.dll": {},
+          "lib/net46/Binance.API.Csharp.Client.Models.dll": {},
+          "lib/net46/Binance.API.Csharp.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Binance.API.Csharp.Client.Domain.dll": {},
+          "lib/net46/Binance.API.Csharp.Client.Models.dll": {},
+          "lib/net46/Binance.API.Csharp.Client.dll": {}
+        }
+      },
+      "Binance.Net/10.4.0": {
         "type": "package",
         "dependencies": {
           "CryptoExchange.Net": "7.11.2"
@@ -32,6 +49,28 @@
         },
         "runtime": {
           "lib/netstandard2.1/Binance.Net.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Binance.Spot/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Common.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Spot.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Common.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Spot.dll": {
             "related": ".xml"
           }
         }
@@ -311,10 +350,10 @@
           }
         }
       },
-      "ScottPlot.WinForms/5.0.37": {
+      "ScottPlot.WinForms/5.0.39": {
         "type": "package",
         "dependencies": {
-          "ScottPlot": "5.0.37",
+          "ScottPlot": "5.0.39",
           "SkiaSharp.Views.WindowsForms": "2.88.8"
         },
         "compile": {
@@ -770,6 +809,15 @@
             "related": ".xml"
           }
         }
+      },
+      "WebSocketSharp-NonPreRelease/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/websocket-sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net35/websocket-sharp.dll": {}
+        }
       }
     }
   },
@@ -807,21 +855,54 @@
         "lib/netstandard2.0/Aspose.Cells.xml"
       ]
     },
-    "Binance.Net/10.3.0": {
-      "sha512": "eJwPW1DT7IBU/qMw7HhpDU4aJLpCcBV3RJhbncTiLafPps0QfsxzwZj53d0x2JMOe2Y+BMx/9AljvaCne9vGQQ==",
+    "Binance.API.Csharp.Client/1.4.0": {
+      "sha512": "hpNgBzzETXTXFNpnTMRTCwSRhP83SBr6Z+d4roXme9o04sCMqG+eCgEylEeNVDd0k/2O5t5+7AhSJRfNnr8RJw==",
       "type": "package",
-      "path": "binance.net/10.3.0",
+      "path": "binance.api.csharp.client/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "binance.api.csharp.client.1.4.0.nupkg.sha512",
+        "binance.api.csharp.client.nuspec",
+        "lib/net46/Binance.API.Csharp.Client.Domain.dll",
+        "lib/net46/Binance.API.Csharp.Client.Models.dll",
+        "lib/net46/Binance.API.Csharp.Client.dll"
+      ]
+    },
+    "Binance.Net/10.4.0": {
+      "sha512": "iEU9ATJvYphxPDk2qxisniCuEUQmjcmYkopUa4TKfgfT7F81/H/R2tp8DPhinrCVUUr4RKzij6ROnKotoXzOMA==",
+      "type": "package",
+      "path": "binance.net/10.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "binance.net.10.3.0.nupkg.sha512",
+        "binance.net.10.4.0.nupkg.sha512",
         "binance.net.nuspec",
         "icon.png",
         "lib/netstandard2.0/Binance.Net.dll",
         "lib/netstandard2.0/Binance.Net.xml",
         "lib/netstandard2.1/Binance.Net.dll",
         "lib/netstandard2.1/Binance.Net.xml"
+      ]
+    },
+    "Binance.Spot/4.1.0": {
+      "sha512": "fc1ZULVPSwX3Y1+1yb9Boj6fw2zSkpkHfDoGsOWa2JJkepyI8AnpggQASexVXHUUP+kPrpVwsPiWySxLNGBdzQ==",
+      "type": "package",
+      "path": "binance.spot/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "LICENSE.md",
+        "README.md",
+        "binance.spot.4.1.0.nupkg.sha512",
+        "binance.spot.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Common.dll",
+        "lib/netstandard2.0/Common.xml",
+        "lib/netstandard2.0/Spot.dll",
+        "lib/netstandard2.0/Spot.xml"
       ]
     },
     "CryptoExchange.Net/7.11.2": {
@@ -1288,10 +1369,10 @@
         "scottplot.nuspec"
       ]
     },
-    "ScottPlot.WinForms/5.0.37": {
-      "sha512": "oCM53u8oaY3gjAfXrBY1yvSxLqZ95EizXaHOuFPP9SC64JiR5xzrVh57X32JCBONeyR+6GCNJyr788KnuqDDCQ==",
+    "ScottPlot.WinForms/5.0.39": {
+      "sha512": "aG6y5wWbsu/DSYz6vPGItNKTqK4Lw1B7dtsVft1zNSIKnZcWr9EdfVlM+eMj1lxENNU1u9+UTutglSUWSExLlA==",
       "type": "package",
-      "path": "scottplot.winforms/5.0.37",
+      "path": "scottplot.winforms/5.0.39",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1301,7 +1382,7 @@
         "lib/net6.0-windows7.0/ScottPlot.WinForms.dll",
         "lib/net6.0-windows7.0/ScottPlot.WinForms.xml",
         "readme.md",
-        "scottplot.winforms.5.0.37.nupkg.sha512",
+        "scottplot.winforms.5.0.39.nupkg.sha512",
         "scottplot.winforms.nuspec"
       ]
     },
@@ -2609,14 +2690,28 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "WebSocketSharp-NonPreRelease/1.0.0": {
+      "sha512": "O1TLFp8hwgVFEI0bjAGLAdsGwtT+yggdRYAlOSw+ZCtwHVc5LmUBU52H+KgG37med9e11lsxmlNzzlF6/hW+Bg==",
+      "type": "package",
+      "path": "websocketsharp-nonprerelease/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/websocket-sharp.dll",
+        "websocketsharp-nonprerelease.1.0.0.nupkg.sha512",
+        "websocketsharp-nonprerelease.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Aspose.Cells >= 24.9.0",
-      "Binance.Net >= 10.3.0",
+      "Binance.API.Csharp.Client >= 1.4.0",
+      "Binance.Net >= 10.4.0",
+      "Binance.Spot >= 4.1.0",
       "ScottPlot >= 5.0.39",
-      "ScottPlot.WinForms >= 5.0.37",
+      "ScottPlot.WinForms >= 5.0.39",
       "System.Linq >= 4.3.0"
     ]
   },
@@ -2676,9 +2771,17 @@
             "target": "Package",
             "version": "[24.9.0, )"
           },
+          "Binance.API.Csharp.Client": {
+            "target": "Package",
+            "version": "[1.4.0, )"
+          },
           "Binance.Net": {
             "target": "Package",
-            "version": "[10.3.0, )"
+            "version": "[10.4.0, )"
+          },
+          "Binance.Spot": {
+            "target": "Package",
+            "version": "[4.1.0, )"
           },
           "ScottPlot": {
             "target": "Package",
@@ -2686,7 +2789,7 @@
           },
           "ScottPlot.WinForms": {
             "target": "Package",
-            "version": "[5.0.37, )"
+            "version": "[5.0.39, )"
           },
           "System.Linq": {
             "target": "Package",
@@ -2721,6 +2824,16 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Le package 'Binance.API.Csharp.Client 1.4.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "Binance.API.Csharp.Client",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Le package 'OpenTK 3.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "OpenTK",
       "targetGraphs": [
@@ -2733,6 +2846,16 @@
       "warningLevel": 1,
       "message": "Le package 'OpenTK.GLControl 3.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "OpenTK.GLControl",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'WebSocketSharp-NonPreRelease 1.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "WebSocketSharp-NonPreRelease",
       "targetGraphs": [
         "net6.0-windows7.0"
       ]

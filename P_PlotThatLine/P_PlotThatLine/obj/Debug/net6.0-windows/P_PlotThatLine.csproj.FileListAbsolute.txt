@@ -49,3 +49,9 @@ C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\b
 C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
 C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\System.Text.Json.dll
 C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Binance.API.Csharp.Client.Domain.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Binance.API.Csharp.Client.Models.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Binance.API.Csharp.Client.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Common.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Spot.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\websocket-sharp.dll

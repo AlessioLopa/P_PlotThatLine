@@ -4,6 +4,9 @@ using ScottPlot;
 using ScottPlot.Colormaps;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
+using Binance.Net;
+using Binance.Net.Clients;
+using System.Net;
 
 namespace P_PlotThatLine
 {
@@ -13,29 +16,11 @@ namespace P_PlotThatLine
         {
             InitializeComponent();
 
-            var data = importDataBTC();
-
-            List<double> price = new List<double>();
-            List<DateTime> date = new List<DateTime>();
-
-            // Ajoute les données dans la liste correspondant à la date et au prix
-            foreach (var item in data)
-            {
-                price.Add(item.open);
-                date.Add(item.start);
-
-            }
-
-            formsPlot1.Plot.Add.ScatterLine(date, price);
-
-            // Modifie la valeur 
-            formsPlot1.Plot.Axes.DateTimeTicksBottom();
-            formsPlot1.Refresh();
-
+            importBinanceData("BTCUSDT");
 
         }
 
-        private List<BTC> importDataBTC()
+        private List<BTC> importCSVDataBTC()
         {
             // Import le fichier excel
             Workbook wb = new Workbook("C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\Data\\bitcoin_2010-01-01_2024-08-28.xlsx");
@@ -75,6 +60,32 @@ namespace P_PlotThatLine
             return data;
         }
 
+        
+        public void importBinanceData(string symbol)
+        {
+            // Ràcupère les donnée historique depuis l'API Binance avec un interval de un jour
+            var client = new BinanceRestClient();
+            var klines = client.SpotApi.ExchangeData.GetKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneMinute);
+
+            List<Decimal> price = new List<Decimal>();
+            List<DateTime> date = new List<DateTime>();
+
+            // Ajoute les données dans la liste correspondant à la date et au prix
+            foreach (var item in klines.Result.Data)
+            {
+                price.Add(item.OpenPrice);
+                date.Add(item.OpenTime);
+
+            }
+
+            formsPlot1.Plot.Add.ScatterLine(date, price);
+
+            // Modifie la valeur 
+            formsPlot1.Plot.Axes.DateTimeTicksBottom();
+            formsPlot1.Refresh();
+
+        }
+
         private void formsPlot1_Load(object sender, EventArgs e)
         {
 
@@ -97,8 +108,7 @@ namespace P_PlotThatLine
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
-            var data = importDataBTC();
-
+            var data = importCSVDataBTC();
 
             List<double> filteredPrice = new List<double>();
             List<DateTime> filteredDate = new List<DateTime>();

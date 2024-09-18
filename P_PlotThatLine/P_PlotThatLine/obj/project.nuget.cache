@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hx90vEyOZo6nn3up0K/GiJZcNCGv58KOm9r520L9QNc0GH851AG+69xlfHesCWj0MADcMs/m9tVWzKSi2bMYDg==",
+  "dgSpecHash": "iy0cBSKuwlXdhWk1qR1MVFTjgti3R+3Gp4TiwDARDTom4oBMcsQukOxnelPC3zxiQvNY8OjNWABhu2n3H+YGGA==",
   "success": true,
   "projectFilePath": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pu41ecx\\.nuget\\packages\\aspose.cells\\24.9.0\\aspose.cells.24.9.0.nupkg.sha512",
-    "C:\\Users\\pu41ecx\\.nuget\\packages\\binance.net\\10.3.0\\binance.net.10.3.0.nupkg.sha512",
+    "C:\\Users\\pu41ecx\\.nuget\\packages\\binance.api.csharp.client\\1.4.0\\binance.api.csharp.client.1.4.0.nupkg.sha512",
+    "C:\\Users\\pu41ecx\\.nuget\\packages\\binance.net\\10.4.0\\binance.net.10.4.0.nupkg.sha512",
+    "C:\\Users\\pu41ecx\\.nuget\\packages\\binance.spot\\4.1.0\\binance.spot.4.1.0.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\cryptoexchange.net\\7.11.2\\cryptoexchange.net.7.11.2.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
@@ -22,7 +24,7 @@
     "C:\\Users\\pu41ecx\\.nuget\\packages\\opentk\\3.1.0\\opentk.3.1.0.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\opentk.glcontrol\\3.1.0\\opentk.glcontrol.3.1.0.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\scottplot\\5.0.39\\scottplot.5.0.39.nupkg.sha512",
-    "C:\\Users\\pu41ecx\\.nuget\\packages\\scottplot.winforms\\5.0.37\\scottplot.winforms.5.0.37.nupkg.sha512",
+    "C:\\Users\\pu41ecx\\.nuget\\packages\\scottplot.winforms\\5.0.39\\scottplot.winforms.5.0.39.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\skiasharp.nativeassets.linux.nodependencies\\2.88.8\\skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
@@ -47,9 +49,20 @@
     "C:\\Users\\pu41ecx\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\pu41ecx\\.nuget\\packages\\system.text.json\\8.0.4\\system.text.json.8.0.4.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\pu41ecx\\.nuget\\packages\\websocketsharp-nonprerelease\\1.0.0\\websocketsharp-nonprerelease.1.0.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'Binance.API.Csharp.Client 1.4.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "Binance.API.Csharp.Client",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",
@@ -66,6 +79,16 @@
       "warningLevel": 1,
       "message": "Le package 'OpenTK.GLControl 3.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "OpenTK.GLControl",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'WebSocketSharp-NonPreRelease 1.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "WebSocketSharp-NonPreRelease",
       "targetGraphs": [
         "net6.0-windows7.0"
       ]

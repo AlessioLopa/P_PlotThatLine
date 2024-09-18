@@ -9,9 +9,11 @@
       "P_PlotThatLine/1.0.0": {
         "dependencies": {
           "Aspose.Cells": "24.9.0",
-          "Binance.Net": "10.3.0",
+          "Binance.API.Csharp.Client": "1.4.0",
+          "Binance.Net": "10.4.0",
+          "Binance.Spot": "4.1.0",
           "ScottPlot": "5.0.39",
-          "ScottPlot.WinForms": "5.0.37",
+          "ScottPlot.WinForms": "5.0.39",
           "System.Linq": "4.3.0"
         },
         "runtime": {
@@ -31,14 +33,49 @@
           }
         }
       },
-      "Binance.Net/10.3.0": {
+      "Binance.API.Csharp.Client/1.4.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "WebSocketSharp-NonPreRelease": "1.0.0"
+        },
+        "runtime": {
+          "lib/net46/Binance.API.Csharp.Client.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net46/Binance.API.Csharp.Client.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net46/Binance.API.Csharp.Client.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "Binance.Net/10.4.0": {
         "dependencies": {
           "CryptoExchange.Net": "7.11.2"
         },
         "runtime": {
           "lib/netstandard2.1/Binance.Net.dll": {
-            "assemblyVersion": "10.3.0.0",
-            "fileVersion": "10.3.0.0"
+            "assemblyVersion": "10.4.0.0",
+            "fileVersion": "10.4.0.0"
+          }
+        }
+      },
+      "Binance.Spot/4.1.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/Spot.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -191,15 +228,15 @@
           }
         }
       },
-      "ScottPlot.WinForms/5.0.37": {
+      "ScottPlot.WinForms/5.0.39": {
         "dependencies": {
           "ScottPlot": "5.0.39",
           "SkiaSharp.Views.WindowsForms": "2.88.8"
         },
         "runtime": {
           "lib/net6.0-windows7.0/ScottPlot.WinForms.dll": {
-            "assemblyVersion": "5.0.37.0",
-            "fileVersion": "5.0.37.0"
+            "assemblyVersion": "5.0.39.0",
+            "fileVersion": "5.0.39.0"
           }
         }
       },
@@ -448,6 +485,14 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
         }
+      },
+      "WebSocketSharp-NonPreRelease/1.0.0": {
+        "runtime": {
+          "lib/net35/websocket-sharp.dll": {
+            "assemblyVersion": "1.0.2.32519",
+            "fileVersion": "1.0.2.32519"
+          }
+        }
       }
     }
   },
@@ -464,12 +509,26 @@
       "path": "aspose.cells/24.9.0",
       "hashPath": "aspose.cells.24.9.0.nupkg.sha512"
     },
-    "Binance.Net/10.3.0": {
+    "Binance.API.Csharp.Client/1.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eJwPW1DT7IBU/qMw7HhpDU4aJLpCcBV3RJhbncTiLafPps0QfsxzwZj53d0x2JMOe2Y+BMx/9AljvaCne9vGQQ==",
-      "path": "binance.net/10.3.0",
-      "hashPath": "binance.net.10.3.0.nupkg.sha512"
+      "sha512": "sha512-hpNgBzzETXTXFNpnTMRTCwSRhP83SBr6Z+d4roXme9o04sCMqG+eCgEylEeNVDd0k/2O5t5+7AhSJRfNnr8RJw==",
+      "path": "binance.api.csharp.client/1.4.0",
+      "hashPath": "binance.api.csharp.client.1.4.0.nupkg.sha512"
+    },
+    "Binance.Net/10.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iEU9ATJvYphxPDk2qxisniCuEUQmjcmYkopUa4TKfgfT7F81/H/R2tp8DPhinrCVUUr4RKzij6ROnKotoXzOMA==",
+      "path": "binance.net/10.4.0",
+      "hashPath": "binance.net.10.4.0.nupkg.sha512"
+    },
+    "Binance.Spot/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fc1ZULVPSwX3Y1+1yb9Boj6fw2zSkpkHfDoGsOWa2JJkepyI8AnpggQASexVXHUUP+kPrpVwsPiWySxLNGBdzQ==",
+      "path": "binance.spot/4.1.0",
+      "hashPath": "binance.spot.4.1.0.nupkg.sha512"
     },
     "CryptoExchange.Net/7.11.2": {
       "type": "package",
@@ -583,12 +642,12 @@
       "path": "scottplot/5.0.39",
       "hashPath": "scottplot.5.0.39.nupkg.sha512"
     },
-    "ScottPlot.WinForms/5.0.37": {
+    "ScottPlot.WinForms/5.0.39": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oCM53u8oaY3gjAfXrBY1yvSxLqZ95EizXaHOuFPP9SC64JiR5xzrVh57X32JCBONeyR+6GCNJyr788KnuqDDCQ==",
-      "path": "scottplot.winforms/5.0.37",
-      "hashPath": "scottplot.winforms.5.0.37.nupkg.sha512"
+      "sha512": "sha512-aG6y5wWbsu/DSYz6vPGItNKTqK4Lw1B7dtsVft1zNSIKnZcWr9EdfVlM+eMj1lxENNU1u9+UTutglSUWSExLlA==",
+      "path": "scottplot.winforms/5.0.39",
+      "hashPath": "scottplot.winforms.5.0.39.nupkg.sha512"
     },
     "SkiaSharp/2.88.8": {
       "type": "package",
@@ -764,6 +823,13 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "WebSocketSharp-NonPreRelease/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O1TLFp8hwgVFEI0bjAGLAdsGwtT+yggdRYAlOSw+ZCtwHVc5LmUBU52H+KgG37med9e11lsxmlNzzlF6/hW+Bg==",
+      "path": "websocketsharp-nonprerelease/1.0.0",
+      "hashPath": "websocketsharp-nonprerelease.1.0.0.nupkg.sha512"
     }
   }
 }
