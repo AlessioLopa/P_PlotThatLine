@@ -16,8 +16,91 @@ namespace P_PlotThatLine
         {
             InitializeComponent();
 
-            importBinanceData("BTCUSDT");
+            formsPlot1.Plot.Axes.DateTimeTicksBottom();
 
+            importBinanceData("BTCUSDT");
+            importBinanceData("ETHUSDT");
+            importBinanceData("SOLUSDT");
+        }
+
+        private List<SOL> importCSVDataSOL()
+        {
+            // Import le fichier excel
+            Workbook wb = new Workbook("C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\Data\\solana_2020-03-16_2024-09-25.xlsx");
+
+            // Récupère la fiche des données
+            Worksheet sheet = wb.Worksheets[0];
+
+            int rows = sheet.Cells.MaxDataRow;
+            int cols = sheet.Cells.MaxColumn;
+
+            var data = new List<SOL>();
+
+            for (int x = 0 + 1; x < rows; x++)
+            {
+                int y = 0;
+
+                string start = sheet.Cells[x, y++].StringValue;
+                string end = sheet.Cells[x, y++].StringValue;
+                string open = sheet.Cells[x, y++].StringValue;
+                string high = sheet.Cells[x, y++].StringValue;
+                string low = sheet.Cells[x, y++].StringValue;
+                string close = sheet.Cells[x, y++].StringValue;
+
+                data.Add(new SOL(
+                    start,
+                    end,
+                    open,
+                    high,
+                    low,
+                    close
+                    ));
+
+                y = 0;
+
+            }
+
+            return data;
+        }
+
+        private List<ETH> importCSVDataETH()
+        {
+            // Import le fichier excel
+            Workbook wb = new Workbook("C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\Data\\ethereum_2015-07-30_2024-09-18.xlsx");
+
+            // Récupère la fiche des données
+            Worksheet sheet = wb.Worksheets[0];
+
+            int rows = sheet.Cells.MaxDataRow;
+            int cols = sheet.Cells.MaxColumn;
+
+            var data = new List<ETH>();
+
+            for (int x = 0 + 1; x < rows; x++)
+            {
+                int y = 0;
+
+                string start = sheet.Cells[x, y++].StringValue;
+                string end = sheet.Cells[x, y++].StringValue;
+                string open = sheet.Cells[x, y++].StringValue;
+                string high = sheet.Cells[x, y++].StringValue;
+                string low = sheet.Cells[x, y++].StringValue;
+                string close = sheet.Cells[x, y++].StringValue;
+
+                data.Add(new ETH(
+                    start,
+                    end,
+                    open,
+                    high,
+                    low,
+                    close
+                    ));
+
+                y = 0;
+
+            }
+
+            return data;
         }
 
         private List<BTC> importCSVDataBTC()
@@ -60,12 +143,11 @@ namespace P_PlotThatLine
             return data;
         }
 
-        
         public void importBinanceData(string symbol)
         {
             // Ràcupère les donnée historique depuis l'API Binance avec un interval de un jour
             var client = new BinanceRestClient();
-            var klines = client.SpotApi.ExchangeData.GetKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneMinute);
+            var klines = client.SpotApi.ExchangeData.GetKlinesAsync(symbol, Binance.Net.Enums.KlineInterval.OneDay);
 
             List<Decimal> price = new List<Decimal>();
             List<DateTime> date = new List<DateTime>();
@@ -81,8 +163,11 @@ namespace P_PlotThatLine
             formsPlot1.Plot.Add.ScatterLine(date, price);
 
             // Modifie la valeur 
-            formsPlot1.Plot.Axes.DateTimeTicksBottom();
             formsPlot1.Refresh();
+
+        }
+
+        public void dateFilter(DateTime startDate, DateTime endDate) {
 
         }
 
@@ -100,36 +185,42 @@ namespace P_PlotThatLine
         {
 
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        
+        private void PlotfilterDate(DateTime startDate, DateTime endDate)
         {
             formsPlot1.Reset();
 
-            DateTime startDate = dateTimePicker1.Value;
-            DateTime endDate = dateTimePicker2.Value;
+            formsPlot1.Plot.Axes.DateTimeTicksBottom();
 
-            var data = importCSVDataBTC();
+            // Importe les données depuis les fichier Excel
+            var BTC = importCSVDataBTC();
+            var ETH = importCSVDataETH();
+            var SOL = importCSVDataSOL();
 
-            List<double> filteredPrice = new List<double>();
-            List<DateTime> filteredDate = new List<DateTime>();
+            // Filtrage des datas selon les dates em paramètre
+            var filteredPriceBTC = BTC.Where(item => item.start > startDate && item.start < endDate).Select(item => item.open);
+            var filteredDateBTC = BTC.Where(item => item.start > startDate && item.start < endDate).Select(item => item.start);
 
-            // Ajoute les données dans la liste correspondant à la date et au prix
-            foreach (var item in data)
-            {
-                if (item.start > startDate && item.start < endDate)
-                {
-                    filteredPrice.Add(item.open);
-                    filteredDate.Add(item.start);
-                }
-                
-            }
+            var filteredPriceETH = ETH.Where(item => item.start > startDate && item.start < endDate).Select(item => item.open);
+            var filteredDateETH = ETH.Where(item => item.start > startDate && item.start < endDate).Select(item => item.start);
 
-            formsPlot1.Plot.Add.ScatterLine(filteredDate, filteredPrice);
+            var filteredPriceSOL = SOL.Where(item => item.start > startDate && item.start < endDate).Select(item => item.open);
+            var filteredDateSOL = SOL.Where(item => item.start > startDate && item.start < endDate).Select(item => item.start);
+
+            // Affichage des graphiques filtrer
+            formsPlot1.Plot.Add.ScatterLine(filteredDateBTC.ToArray(), filteredPriceBTC.ToArray());
+            formsPlot1.Plot.Add.ScatterLine(filteredDateETH.ToArray(), filteredPriceETH.ToArray());
+            formsPlot1.Plot.Add.ScatterLine(filteredDateSOL.ToArray(), filteredPriceSOL.ToArray());
 
             // Modifie la valeur 
-            formsPlot1.Plot.Axes.DateTimeTicksBottom();
             formsPlot1.Refresh();
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PlotfilterDate(dateTimePicker1.Value, dateTimePicker2.Value);
+           
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
