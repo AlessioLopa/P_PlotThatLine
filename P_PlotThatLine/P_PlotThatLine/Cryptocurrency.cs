@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P_PlotThatLine
 {
-    internal class Cryptocurrency
+    public class Cryptocurrency
     {
 
         public Cryptocurrency(string name,string start, string end, string open, string high, string low, string close)

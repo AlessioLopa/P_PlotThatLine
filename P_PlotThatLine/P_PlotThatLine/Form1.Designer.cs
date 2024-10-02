@@ -43,15 +43,15 @@
             // formsPlot1
             // 
             formsPlot1.DisplayScale = 1F;
-            formsPlot1.Location = new Point(12, 34);
+            formsPlot1.Location = new Point(75, 65);
             formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(574, 381);
+            formsPlot1.Size = new Size(615, 398);
             formsPlot1.TabIndex = 0;
             formsPlot1.Load += formsPlot1_Load;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(627, 51);
+            dateTimePicker1.Location = new Point(799, 65);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(161, 23);
             dateTimePicker1.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(627, 84);
+            dateTimePicker2.Location = new Point(799, 98);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(162, 23);
             dateTimePicker2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             checkBox1.AccessibleDescription = "";
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(592, 151);
+            checkBox1.Location = new Point(764, 165);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(68, 19);
             checkBox1.TabIndex = 3;
@@ -80,7 +80,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(592, 57);
+            label1.Location = new Point(764, 71);
             label1.Name = "label1";
             label1.Size = new Size(21, 15);
             label1.TabIndex = 6;
@@ -90,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(592, 90);
+            label2.Location = new Point(764, 104);
             label2.Name = "label2";
             label2.Size = new Size(13, 15);
             label2.TabIndex = 7;
@@ -98,7 +98,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(645, 122);
+            button1.Location = new Point(817, 136);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 8;
@@ -110,7 +110,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1053, 601);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
