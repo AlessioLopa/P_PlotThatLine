@@ -9,8 +9,9 @@ namespace P_PlotThatLine
     internal class Cryptocurrency
     {
 
-        public Cryptocurrency(string start, string end, string open, string high, string low, string close)
+        public Cryptocurrency(string name,string start, string end, string open, string high, string low, string close)
         {
+            this.name = name;
             this.start = Convert.ToDateTime(start);
             this.end = Convert.ToDateTime(end);
             this.open = Convert.ToSingle(open);
@@ -19,6 +20,7 @@ namespace P_PlotThatLine
             this.close = Convert.ToSingle(close);
         }
 
+        public string name { get; set; }
         public DateTime start { get; set; }
         public DateTime end { get; set; }
         public double open { get; set; }
