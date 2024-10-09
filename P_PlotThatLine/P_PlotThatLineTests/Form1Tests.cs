@@ -24,6 +24,7 @@ namespace P_PlotThatLine.Tests
             // Assert
             Assert.IsNotNull(data);
             Assert.AreEqual("BTC", data.First().name);
+            Assert.IsTrue(data.Count() > 0);
         }
     }
 }

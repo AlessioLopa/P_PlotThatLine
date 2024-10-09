@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59AA546D-FCB8-4D8C-BB25-354AF6E59BF7}|P_PlotThatLineTests\\P_PlotThatLineTests.csproj|c:\\users\\pu41ecx\\documents\\github\\p_plotthatline\\p_plotthatline\\p_plotthatlinetests\\form1tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59AA546D-FCB8-4D8C-BB25-354AF6E59BF7}|P_PlotThatLineTests\\P_PlotThatLineTests.csproj|solutionrelative:p_plotthatlinetests\\form1tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|c:\\users\\pu41ecx\\documents\\github\\p_plotthatline\\p_plotthatline\\p_plotthatline\\cryptocurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|solutionrelative:p_plotthatline\\cryptocurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|c:\\users\\pu41ecx\\documents\\github\\p_plotthatline\\p_plotthatline\\p_plotthatline\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|solutionrelative:p_plotthatline\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|c:\\users\\pu41ecx\\documents\\github\\p_plotthatline\\p_plotthatline\\p_plotthatline\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|solutionrelative:p_plotthatline\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|c:\\users\\pu41ecx\\documents\\github\\p_plotthatline\\p_plotthatline\\p_plotthatline\\cryptocurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58BFB41F-71FE-45B3-8A5D-37BC764247A0}|P_PlotThatLine\\P_PlotThatLine.csproj|solutionrelative:p_plotthatline\\cryptocurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59AA546D-FCB8-4D8C-BB25-354AF6E59BF7}|P_PlotThatLineTests\\P_PlotThatLineTests.csproj|c:\\users\\pu41ecx\\documents\\github\\p_plotthatline\\p_plotthatline\\p_plotthatlinetests\\form1tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59AA546D-FCB8-4D8C-BB25-354AF6E59BF7}|P_PlotThatLineTests\\P_PlotThatLineTests.csproj|solutionrelative:p_plotthatlinetests\\form1tests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1Tests.cs",
               "DocumentMoniker": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLineTests\\Form1Tests.cs",
               "RelativeDocumentMoniker": "P_PlotThatLineTests\\Form1Tests.cs",
               "ToolTip": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLineTests\\Form1Tests.cs",
               "RelativeToolTip": "P_PlotThatLineTests\\Form1Tests.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAABkAAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-02T13:10:18.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Cryptocurrency.cs",
               "DocumentMoniker": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLine\\Cryptocurrency.cs",
               "RelativeDocumentMoniker": "P_PlotThatLine\\Cryptocurrency.cs",
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLine\\Form1.cs",
               "RelativeDocumentMoniker": "P_PlotThatLine\\Form1.cs",
@@ -68,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLine\\Form1.cs",
               "RelativeDocumentMoniker": "P_PlotThatLine\\Form1.cs",
               "ToolTip": "C:\\Users\\pu41ecx\\Documents\\Github\\P_PlotThatLine\\P_PlotThatLine\\P_PlotThatLine\\Form1.cs",
               "RelativeToolTip": "P_PlotThatLine\\Form1.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAA9wFgAAAAJAAAA",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAowFcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T14:11:15.303Z",
               "EditorCaption": ""

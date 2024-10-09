@@ -55,3 +55,4 @@ C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\b
 C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Common.dll
 C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\Spot.dll
 C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\bin\Debug\net6.0-windows\websocket-sharp.dll
+C:\Users\pu41ecx\Documents\Github\P_PlotThatLine\P_PlotThatLine\P_PlotThatLine\obj\Debug\net6.0-windows\Form1.resources
