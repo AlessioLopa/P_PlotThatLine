@@ -9,6 +9,7 @@ using Binance.Net.Clients;
 using System.Net;
 using ScottPlot.Plottables;
 using System.Drawing;
+using Aspose.Cells.Drawing;
 
 namespace P_PlotThatLine
 {
@@ -22,10 +23,12 @@ namespace P_PlotThatLine
             InitializeComponent();
 
 
-
+            // Initialise l'axe X avec les dates
             formsPlot1.Plot.Axes.DateTimeTicksBottom();
-           
 
+            List<ScottPlot.Plottables.Scatter> MyScatters = new();
+
+            // Importe les données de binance, affiche le graphique 
             var BTCUSDT = importBinanceData("BTCUSDT");
             var Plot_BTC = formsPlot1.Plot.Add.ScatterLine(BTCUSDT.date, BTCUSDT.price);
             Plot_BTC.LegendText = BTCUSDT.symbole;
@@ -39,55 +42,112 @@ namespace P_PlotThatLine
             var Plot_SOL = formsPlot1.Plot.Add.ScatterLine(SOLUSDT.date, SOLUSDT.price);
             Plot_ETH.LegendText = SOLUSDT.symbole;
 
+            MyScatters.Add(Plot_BTC);
+            MyScatters.Add(Plot_ETH);
+            MyScatters.Add(Plot_SOL);
+
+            // Créer un crosshair et ne l'affiche pas et un marker
             var MyCrosshair = formsPlot1.Plot.Add.Crosshair(0, 0);
+            ScottPlot.Plottables.Marker marker = formsPlot1.Plot.Add.Marker(0, 0);
             MyCrosshair.IsVisible = false;
-            MyCrosshair.MarkerShape = MarkerShape.OpenCircle;
-            MyCrosshair.MarkerSize = 15;
+            marker.Shape = MarkerShape.OpenCircle;
+            marker.Size = 15;
+            marker.LineWidth = 2;
 
-            ScottPlot.Plottables.Text MyHighlightText = formsPlot1.Plot.Add.Text("", 0,0);
 
+            // Créer un texte qui n'affiche rien pour les détails
+            ScottPlot.Plottables.Text detailsText = formsPlot1.Plot.Add.Text("", 0,0);
+            detailsText.LabelAlignment = Alignment.LowerLeft;
+            detailsText.LabelBold = true;
+            detailsText.OffsetX = 7;
+            detailsText.OffsetY = -7;
+
+            formsPlot1.Refresh();
 
             formsPlot1.MouseMove += (s, e) =>
             {
 
-                // determine where the mouse is and get the nearest point
+                // Détermine où est le curseur
                 Pixel mousePixel = new(e.Location.X, e.Location.Y);
                 Coordinates mouseLocation = formsPlot1.Plot.GetCoordinates(mousePixel);
+                
+                Dictionary<int, DataPoint> nearestPoints = new();
 
-                var nearest = Plot_BTC.Data.GetNearest(mouseLocation, formsPlot1.Plot.LastRender);
-
-
-                // place the crosshair over the highlighted point
-                if (nearest.IsReal)
+                // Récupère les pointes les plus près du curseur pour chaque graphique, puis les ajoutes à une liste
+                nearestPoints = MyScatters.Select((scatter, index) => new
                 {
+                    Index = index,
+                    NearestPoint = scatter.Data.GetNearest(mouseLocation, formsPlot1.Plot.LastRender)
+                }).ToDictionary(item => item.Index, item => item.NearestPoint);
+
+                bool pointSelected = false;
+                int scatterIndex = -1;
+                double smallestDistance = double.MaxValue;
+
+                //
+                // TODO passer en LINQ
+                for (int i = 0; i < nearestPoints.Count; i++)
+                {
+                    if (nearestPoints[i].IsReal)
+                    {
+                        // Calcule la distance entre le point et le curseur
+                        double distance = nearestPoints[i].Coordinates.Distance(mouseLocation);
+                        if (distance < smallestDistance)
+                        {
+                            // Ajoute l'index
+                            scatterIndex = i;
+                            pointSelected = true;
+                            // Met à jour la bonne distance
+                            smallestDistance = distance;
+                        }
+                    }
+                }
+
+                // Affiche les détails si le point est sélectionner
+                if (pointSelected)
+                {
+                    ScottPlot.Plottables.Scatter scatter = MyScatters[scatterIndex];
+                    DataPoint point = nearestPoints[scatterIndex];
+
                     MyCrosshair.IsVisible = true;
-                    MyCrosshair.Position = nearest.Coordinates;
+                    MyCrosshair.Position = point.Coordinates;
+                    MyCrosshair.LineColor = scatter.MarkerStyle.FillColor;
+
+                    marker.IsVisible = true;
+                    marker.Location = point.Coordinates;
+                    marker.MarkerStyle.LineColor = scatter.MarkerStyle.FillColor;
+
+                    detailsText.IsVisible = true;
+                    detailsText.Location = point.Coordinates;
+                    // TODO changer la valeur X par la bonne date
+                    detailsText.LabelText = $"{point.X}, {point.Y:0.##}";
+                    detailsText.LabelFontColor = scatter.MarkerStyle.FillColor;
 
                     formsPlot1.Refresh();
-
-
-                    MyHighlightText.Location = nearest.Coordinates;
-                    MyHighlightText.LabelText = $"{nearest.X:0.##}, {nearest.Y:0.##}";
-                    MyHighlightText.IsVisible = true;
-
-
+                    base.Text = $"Selected Scatter={scatter.LegendText}, Index={point.Index}, X={point.X:0.##}, Y={point.Y:0.##}";
                 }
 
-                // hide the crosshair when no point is selected
-                if (!nearest.IsReal && MyCrosshair.IsVisible && MyHighlightText.IsVisible)
+                // Cache le crosshaire, le text et le text si aucun point n'est séléctionner
+                if (!pointSelected && MyCrosshair.IsVisible)
                 {
-      
-
                     MyCrosshair.IsVisible = false;
-                    MyHighlightText.IsVisible = false;
-
+                    marker.IsVisible = false;
+                    detailsText.IsVisible = false;
                     formsPlot1.Refresh();
-                    Text = $"No point selected";
+                    base.Text = $"No point selected";
                 }
+
+                
             };
 
         }
 
+        /// <summary>
+        /// Import les données d'un fichier csv et l'ajoute à une classe avec le nom correspondant
+        /// </summary>
+        /// <param name="path">Correspond au chemin du fichier csv</param>
+        /// <param name="name">Correspond au nom du symbole correspondant au fichier (Exemple : BTC, ETH, etc...</param>
+        /// <returns></returns>
         public List<Cryptocurrency> importCryptoFromCSV(string path, string name)
         {
             // Import le fichier excel
@@ -99,10 +159,10 @@ namespace P_PlotThatLine
             int rows = sheet.Cells.MaxDataRow;
             int cols = sheet.Cells.MaxColumn;
 
-
-
+            // Créer une nouvelle classe et ajoute les données
             var data = new List<Cryptocurrency>();
 
+            // (Pas possible de changer en LINQ)
             for (int x = 0 + 1; x < rows; x++)
             {
                 int y = 0;
@@ -118,12 +178,16 @@ namespace P_PlotThatLine
                     ));
 
                 y = 0;
-
             }
 
             return data;
         }
 
+        /// <summary>
+        /// Importe les données depuis binance en utilisant son API
+        /// </summary>
+        /// <param name="symbol">Correspond au symbole (nom) de la cryptomonaie (Exemple : BTCUSD, etc...)</param>
+        /// <returns></returns>
         public (List<decimal> price, List<DateTime> date, string symbole) importBinanceData(string symbol)
         {
             // Recupère les donnée historique depuis l'API Binance avec un interval de un jour
@@ -135,12 +199,6 @@ namespace P_PlotThatLine
             var date = klines.Result.Data.Select(item => item.OpenTime).ToList();
 
             return (price, date, symbol);
-
-            // Affiche le graphe
-            //var plot = formsPlot1.Plot.Add.ScatterLine(date, price);
-            //plot.LegendText = symbol;
-
-            //formsPlot1.Refresh();
 
         }
 
@@ -159,6 +217,11 @@ namespace P_PlotThatLine
 
         }
 
+        /// <summary>
+        /// Filtre les données avec les dates
+        /// </summary>
+        /// <param name="startDate">Date de début</param>
+        /// <param name="endDate">Date de fin</param>
         private void PlotfilterDate(DateTime startDate, DateTime endDate)
         {
             formsPlot1.Reset();
@@ -196,12 +259,10 @@ namespace P_PlotThatLine
 
             plot3.LegendText = SOL.First().name;
 
-
             formsPlot1.Refresh();
-
-
         }
 
+        
         private void button1_Click_1(object sender, EventArgs e)
         {
             PlotfilterDate(dateTimePicker1.Value, dateTimePicker2.Value);
